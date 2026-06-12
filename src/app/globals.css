@@ -1,0 +1,101 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  /* Senior Shower Brand Colors - Teal & Slate */
+  --color-background: 210 40% 98%;
+  --color-foreground: 222 47% 11%;
+
+  /* Teal - Primary */
+  --color-primary: 173 80% 36%;
+  --color-primary-foreground: 210 40% 98%;
+
+  /* Deep Slate - Secondary */
+  --color-secondary: 215 25% 15%;
+  --color-secondary-foreground: 210 40% 98%;
+
+  /* Mint/Light Sage - Accent */
+  --color-accent: 162 76% 36%;
+  --color-accent-foreground: 0 0% 100%;
+
+  /* Alert Yellow */
+  --color-warning: 38 92% 50%;
+  --color-warning-foreground: 222 47% 11%;
+
+  --color-card: 0 0% 100%;
+  --color-card-foreground: 222 47% 11%;
+
+  --radius-lg: 0.75rem;
+
+  --font-sans: var(--font-outfit), sans-serif;
+}
+
+/* Custom Utilities using @utility */
+@utility glass-card {
+  @apply bg-white/70 backdrop-blur-lg border border-white/20 shadow-xl;
+}
+
+@utility glass-dark {
+  @apply bg-neutral-900/60 backdrop-blur-md border border-white/10 shadow-2xl;
+}
+
+@utility text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-emerald-400;
+}
+
+@utility text-gradient-green {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-emerald-400;
+}
+
+@utility bg-irve-gradient {
+  background: linear-gradient(135deg, #0d9488 0%, #34d399 100%);
+}
+
+@utility bg-eco-gradient {
+  background: linear-gradient(135deg, #059669 0%, #34d399 100%);
+}
+
+/* French Flag Accent Bar */
+@utility french-bar {
+  background: linear-gradient(90deg, #002395 33%, #FFFFFF 33%, #FFFFFF 66%, #ED2939 66%);
+}
+
+/* Base styles */
+@layer base {
+  body {
+    @apply bg-neutral-50 text-neutral-900;
+  }
+  
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Selection color */
+  ::selection {
+    @apply bg-blue-600 text-white;
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 102, 255, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(0, 102, 255, 0.6); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+/* Spintax Highlight */
+.spintax-highlight {
+  @apply font-bold;
+}
