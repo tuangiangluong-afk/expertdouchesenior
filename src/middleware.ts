@@ -12,7 +12,7 @@ export const config = {
 export default async function middleware(req: NextRequest) {
     const url = req.nextUrl;
 
-    // Get hostname (e.g. bornerechargeparis.fr, expertbornerecharge.com)
+    // Get hostname (e.g. bornerechargeparis.fr, expertdouchesenior.com)
     let hostname = req.headers.get("host") || "expertdouchesenior.com";
     hostname = hostname.split(":")[0]; // Remove port if present
 
