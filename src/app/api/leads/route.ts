@@ -183,7 +183,7 @@ export async function POST(request: Request) {
 
             await resend.emails.send({
                 from: 'Expert Douche Senior <contact@expertdouchesenior.com>',
-                to: ['hello@expertdouchesenior.com'],
+                to: ['bonjour@expertdouchesenior.com'],
                 subject,
                 html
             });
