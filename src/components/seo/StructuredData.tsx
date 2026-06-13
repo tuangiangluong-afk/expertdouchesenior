@@ -24,13 +24,39 @@ export default function StructuredData() {
             "areaServed": "FR",
             "availableLanguage": "French"
         }
+    
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://expertdouchesenior.com/ville/{search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    };
+
+    const websiteSchema = {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": "https://expertdouchesenior.com",
+        "name": "expertdouchesenior",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://expertdouchesenior.com/ville/{search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    };
+
+    const serviceSchema = {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Installation et Dépannage",
+        "provider": { "@type": "Organization", "name": "expertdouchesenior" },
+        "areaServed": { "@type": "Country", "name": "France" }
     };
 
     return (
         <Script
             id="org-schema"
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) + '\n' + JSON.stringify(websiteSchema) + '\n' + JSON.stringify(serviceSchema) }}
         />
     );
 }
