@@ -165,9 +165,33 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
         });
     }
 
+    
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": guide.title,
+        "description": guide.description,
+        "image": guide.image ? [`https://expertdouchesenior.com${guide.image}`] : [`https://expertdouchesenior.com/images/og-image.png`],
+        "datePublished": guide.date,
+        "author": [{
+            "@type": "Organization",
+            "name": "Expert Douche Senior",
+            "url": "https://expertdouchesenior.com"
+        }],
+        "publisher": {
+            "@type": "Organization",
+            "name": "Expert Douche Senior",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://expertdouchesenior.com/logo.png"
+            }
+        }
+    };
+
     return (
         <div className="min-h-screen bg-white text-slate-900 font-sans">
             {/* Nav */}
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
             <Header isHub={true} variant="default" themeColor="teal" />
 
             <main className="container mx-auto px-4 py-12 pt-40">

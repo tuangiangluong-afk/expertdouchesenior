@@ -8,6 +8,11 @@ export default function StructuredData() {
         "url": "https://expertdouchesenior.com",
         "logo": "https://expertdouchesenior.com/logo.png",
         "description": "Réseau national d'artisans plombiers spécialisés dans le remplacement de baignoire par des douches sécurisées PMR pour seniors. Artisans Handibat & Silverbat.",
+        "sameAs": [
+            "https://www.facebook.com/expertdouchesenior",
+            "https://www.instagram.com/expertdouchesenior"
+        ],
+        "foundingDate": "2020",
         "address": {
             "@type": "PostalAddress",
             "addressCountry": "FR"

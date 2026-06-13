@@ -10,6 +10,7 @@ const outfit = Outfit({
 import { getCurrentYearSEO } from "@/lib/date";
 import StructuredData from "@/components/seo/StructuredData";
 import AttributionTracker from "@/components/AttributionTracker";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 export const metadata: Metadata = {
   title: {
@@ -96,6 +97,7 @@ export default function RootLayout({
         className={`${outfit.variable} font-sans antialiased bg-neutral-900 text-neutral-50`}
       >
         <StructuredData />
+        <GoogleAnalytics GA_MEASUREMENT_ID="G-SBRK53310F" />
         <AttributionTracker />
         {/* Google Tag Manager (noscript) */}
         <noscript>

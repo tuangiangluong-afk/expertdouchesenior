@@ -20,7 +20,7 @@ import FloatingCTA from "@/components/FloatingCTA";
 export const metadata: Metadata = {
     title: "Remplacement Baignoire par Douche Senior | Devis Gratuit",
     description: "Recevez jusqu'à 3 devis gratuits d'installateurs de douches sécurisées et PMR. Éligible MaPrimeAdapt' (jusqu'à 70% d'aides de l'État). Pose en 48h.",
-    keywords: ["douche senior", "remplacement baignoire douche senior", "devis douche senior", "douche pmr", "maprimeadapt salle de bain"],
+    keywords: ["douche senior", "remplacement baignoire douche senior", "devis douche senior", "douche pmr", "maprimeadapt salle de bain", "remplacement baignoire par douche à l'italienne", "remplacement baignoire par douche prix", "aide pour douche senior", "douche plain-pied senior", "aménagement salle de bain PMR", "douche sécurisée personne âgée", "devis salle de bain senior gratuit", "ma prime adapt salle de bain 2026"],
 };
 
 export default function HomePage() {
