@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Header from '@/components/Header';
 import { ArrowLeft, Clock, Calendar, Zap, ArrowRight } from 'lucide-react';
 import SimulatorWidget from '@/components/blog/SimulatorWidget';
-import LocalLinker from '@/components/blog/LocalLinker';
+import LocalLinkerComponent from '@/components/blog/LocalLinker';
 import { createClient } from "@supabase/supabase-js";
 import { marked } from 'marked';
 
@@ -29,10 +29,21 @@ const components = {
         </div>
     ),
     // Un bouton d'appel à l'action marquant
-    CTAButton: ({ href, text }: { href: string, text: string }) => (
+    CTAButton: ({ href, url, text }: { href?: string, url?: string, text: string }) => (
         <div className="my-8 text-center">
             <Link 
-                href={href} 
+                href={href || url || '#'} 
+                className="inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 px-8 py-4 text-lg font-bold text-white shadow-xl shadow-blue-500/20 hover:from-blue-700 hover:to-indigo-700 transition"
+            >
+                {text}
+                <ArrowRight className="w-5 h-5" />
+            </Link>
+        </div>
+    ),
+    CtaButton: ({ href, url, text }: { href?: string, url?: string, text: string }) => (
+        <div className="my-8 text-center">
+            <Link 
+                href={href || url || '#'} 
                 className="inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 px-8 py-4 text-lg font-bold text-white shadow-xl shadow-blue-500/20 hover:from-blue-700 hover:to-indigo-700 transition"
             >
                 {text}
@@ -43,7 +54,7 @@ const components = {
     // Widget de maillage local (pour le mettre au milieu du texte)
     LocalLinker: () => (
         <div className="my-8 not-prose">
-            <LocalLinker />
+            <LocalLinkerComponent />
         </div>
     )
 };
@@ -283,7 +294,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
                             <SimulatorWidget />
 
                             {/* NOUVEAU : Local Linker (Le Maillage) */}
-                            <LocalLinker />
+                            <LocalLinkerComponent />
 
                             {/* Dynamic Table of Contents */}
                             {toc.length > 0 && (

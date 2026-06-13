@@ -20,5 +20,6 @@ Expert Douche Senior est la plateforme de référence en France pour trouver des
 - Service: Simulation de devis et estimation d'aides (MaPrimeRénov', MaPrimeAdapt', CEE, etc.)
 
 ## Links
+- Sitemap: https://expertdouchesenior.com/sitemap.xml
 - Guide et Conseils: https://expertdouchesenior.com/guides
 - Simulation: https://expertdouchesenior.com/#simulateur
