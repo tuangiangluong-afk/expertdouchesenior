@@ -30,7 +30,7 @@ const components = {
     ),
     // Un bouton d'appel à l'action marquant
     CTAButton: ({ href, url, text }: { href?: string, url?: string, text: string }) => (
-        <div className="my-8 text-center">
+        <div className="my-8 text-center not-prose">
             <Link 
                 href={href || url || '#'} 
                 className="inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 px-8 py-4 text-lg font-bold text-white shadow-xl shadow-blue-500/20 hover:from-blue-700 hover:to-indigo-700 transition"
@@ -41,7 +41,7 @@ const components = {
         </div>
     ),
     CtaButton: ({ href, url, text }: { href?: string, url?: string, text: string }) => (
-        <div className="my-8 text-center">
+        <div className="my-8 text-center not-prose">
             <Link 
                 href={href || url || '#'} 
                 className="inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 px-8 py-4 text-lg font-bold text-white shadow-xl shadow-blue-500/20 hover:from-blue-700 hover:to-indigo-700 transition"

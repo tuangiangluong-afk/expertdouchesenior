@@ -1,6 +1,6 @@
 import { getHubConfig, SITES, SiteConfig } from "@/lib/sites-config";
 import { NATIONAL_TARGETS } from "@/config/national-targets";
-import { Zap, Award, ArrowRight, Building2, Home, Briefcase, CheckCircle, TrendingDown } from "lucide-react";
+import { Zap, Award, ArrowRight, Building2, Home, Briefcase, CheckCircle, TrendingDown, ShieldCheck } from "lucide-react";
 import LocalLinker from "@/components/blog/LocalLinker";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -203,7 +203,7 @@ export default function HomePage() {
                                     </div>
                                     <div className="flex items-center gap-3 mb-6">
                                         <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                                            <Zap className="text-teal-600" size={24} />
+                                            <ShieldCheck className="text-teal-600" size={24} />
                                         </div>
                                         <div>
                                             <h3 className="font-bold text-lg text-green-900">Douche Sécurisée</h3>
