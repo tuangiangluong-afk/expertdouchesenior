@@ -1,3 +1,4 @@
+import { headers } from "next/headers";
 import type { Metadata, Viewport } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
@@ -12,15 +13,21 @@ import StructuredData from "@/components/seo/StructuredData";
 import AttributionTracker from "@/components/AttributionTracker";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  const headersList = await headers();
+  const canonicalDomain = headersList.get("x-irve-canonical-domain") || "expertdouchesenior.com";
+  const path = headersList.get("x-irve-path") || "";
+  const baseUrl = `https://${canonicalDomain}`;
+
+  return {
   title: {
     template: `%s | Expert Douche Senior ${getCurrentYearSEO()}`,
     default: `Expert Douche Senior - Douche Sécurisée & PMR ${getCurrentYearSEO()}`,
   },
   description: "Installation de douches sécurisées et italiennes PMR pour seniors. Éligible MaPrimeAdapt'. Devis gratuit sous 24h.",
-  metadataBase: new URL("https://expertdouchesenior.com"),
+  metadataBase: new URL(baseUrl),
   alternates: {
-    canonical: "https://expertdouchesenior.com",
+    canonical: `${baseUrl}${path}`,
   },
   robots: {
     index: true,
@@ -39,10 +46,10 @@ export const metadata: Metadata = {
     siteName: "Expert Douche Senior",
     locale: "fr_FR",
     type: "website",
-    url: "https://expertdouchesenior.com",
+    url: `${baseUrl}${path}`,
     images: [
       {
-        url: "https://expertdouchesenior.com/images/og-image.png",
+        url: `${baseUrl}/images/og-image.png`,
         width: 1200,
         height: 630,
         alt: "Expert Douche Senior - Douches sécurisées seniors et PMR",
@@ -53,7 +60,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Expert Douche Senior - Douche Sécurisée & PMR",
     description: "Installation de douches sécurisées et italiennes PMR pour seniors. Éligible MaPrimeAdapt'. Devis gratuit.",
-    images: ["https://expertdouchesenior.com/images/og-image.png"],
+    images: [`${baseUrl}/images/og-image.png`],
   },
   icons: {
     icon: "/icon.png",
@@ -66,9 +73,8 @@ export const metadata: Metadata = {
       }
     ]
   },
-};
-
-export const viewport: Viewport = {
+  };
+}export const viewport: Viewport = {
   themeColor: "#0d9488",
 };
 
