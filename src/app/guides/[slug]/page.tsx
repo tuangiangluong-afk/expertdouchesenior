@@ -182,19 +182,19 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
         "@type": "Article",
         "headline": guide.title,
         "description": guide.description,
-        "image": guide.image ? [`https://expertdouchesenior.com${guide.image}`] : [`https://expertdouchesenior.com/images/og-image.png`],
+        "image": guide.image ? [`https://www.expertdouchesenior.com${guide.image}`] : [`https://www.expertdouchesenior.com/images/og-image.png`],
         "datePublished": guide.date,
         "author": [{
             "@type": "Organization",
             "name": "Expert Douche Senior",
-            "url": "https://expertdouchesenior.com"
+            "url": "https://www.expertdouchesenior.com"
         }],
         "publisher": {
             "@type": "Organization",
             "name": "Expert Douche Senior",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://expertdouchesenior.com/logo.png"
+                "url": "https://www.expertdouchesenior.com/logo.png"
             }
         }
     };

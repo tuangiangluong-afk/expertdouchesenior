@@ -94,7 +94,7 @@ export async function GET(request: Request) {
                                                     <td style="padding: 10px; border-bottom: 1px solid #f1f5f9; font-size: 14px;">${l.city}</td>
                                                     <td style="padding: 10px; border-bottom: 1px solid #f1f5f9; font-size: 14px;">${l.housing_type || l.type}</td>
                                                     <td style="padding: 10px; border-bottom: 1px solid #f1f5f9; text-align: right;">
-                                                        <a href="https://expertdouchesenior.com/leads/unlock/${l.id}" style="color: #0d9488; font-weight: bold; text-decoration: none; font-size: 12px;">Détails &rarr;</a>
+                                                        <a href="https://www.expertdouchesenior.com/leads/unlock/${l.id}" style="color: #0d9488; font-weight: bold; text-decoration: none; font-size: 12px;">Détails &rarr;</a>
                                                     </td>
                                                 </tr>
                                             `).join('')}
@@ -103,7 +103,7 @@ export async function GET(request: Request) {
                                     
                                     <div style="margin-top: 30px; padding: 20px; background-color: #f0fdfa; border-radius: 8px; text-align: center;">
                                         <p style="margin: 0 0 10px 0; font-size: 14px;">Cliquez sur "Détails" pour débloquer les coordonnées de chaque client.</p>
-                                        <a href="https://expertdouchesenior.com/admin/leads" style="display: inline-block; background-color: #0d9488; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold;">Voir tous les leads</a>
+                                        <a href="https://www.expertdouchesenior.com/admin/leads" style="display: inline-block; background-color: #0d9488; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold;">Voir tous les leads</a>
                                     </div>
                                 </div>
                                 

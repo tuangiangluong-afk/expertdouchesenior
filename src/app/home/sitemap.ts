@@ -4,7 +4,7 @@ import { slugify } from '@/lib/slugify';
 import { getAllGuides } from '@/lib/mdx';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://expertdouchesenior.com';
+    const baseUrl = 'https://www.expertdouchesenior.com';
 
     // 1. CORE STATIC PAGES
     const coreRoutes: MetadataRoute.Sitemap = [

@@ -42,7 +42,7 @@ export async function generateMetadata({
         title: pseo.meta_title,
         description: pseo.meta_description,
         alternates: {
-            canonical: `https://expertdouchesenior.com/ville/${resolvedParams.slug}`,
+            canonical: `https://www.expertdouchesenior.com/ville/${resolvedParams.slug}`,
         },
         openGraph: {
             title: pseo.meta_title,

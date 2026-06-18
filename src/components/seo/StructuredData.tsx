@@ -5,8 +5,8 @@ export default function StructuredData() {
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Expert Douche Senior",
-        "url": "https://expertdouchesenior.com",
-        "logo": "https://expertdouchesenior.com/logo.png",
+        "url": "https://www.expertdouchesenior.com",
+        "logo": "https://www.expertdouchesenior.com/logo.png",
         "description": "Réseau national d'artisans plombiers spécialisés dans le remplacement de baignoire par des douches sécurisées PMR pour seniors. Artisans Handibat & Silverbat.",
         "sameAs": [
             "https://www.facebook.com/expertdouchesenior",
@@ -26,7 +26,7 @@ export default function StructuredData() {
         },
         "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://expertdouchesenior.com/ville/{search_term_string}",
+            "target": "https://www.expertdouchesenior.com/ville/{search_term_string}",
             "query-input": "required name=search_term_string"
         }
     };
@@ -34,11 +34,11 @@ export default function StructuredData() {
     const websiteSchema = {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "url": "https://expertdouchesenior.com",
+        "url": "https://www.expertdouchesenior.com",
         "name": "expertdouchesenior",
         "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://expertdouchesenior.com/ville/{search_term_string}",
+            "target": "https://www.expertdouchesenior.com/ville/{search_term_string}",
             "query-input": "required name=search_term_string"
         }
     };
