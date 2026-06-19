@@ -12,17 +12,17 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
     {
-        quote: "L'outil de comparaison m'a fait gagner des heures. J'ai reçu 3 devis en 24h et l'installation de ma Wallbox était parfaite. Les démarches de subventions ont été gérées par l'installateur.",
+        quote: "L'outil de comparaison m'a fait gagner des heures. J'ai reçu 3 devis en 24h et le remplacement de ma baignoire par une douche sécurisée s'est déroulé à merveille. Ma mère revit et n'a plus peur de glisser.",
         name: "Marc Dubreuil",
         location: "Lyon",
-        product: "Tesla Wall Connector",
+        product: "Douche PMR Kinedo",
         initials: "MD",
     },
     {
-        quote: "Très recommandé ! L'installateur était très professionnel et m'a tout expliqué sur l'application de charge. Prix très transparent.",
+        quote: "Très recommandé ! L'artisan agréé Handibat était très professionnel. La douche à l'italienne sécurisée avec receveur antidérapant et barre de maintien a été posée en 48h. Finitions impeccables.",
         name: "Valérie Lemaire",
         location: "Bordeaux",
-        product: "Schneider EVlink",
+        product: "Douche Senior Idhra",
         initials: "VL",
     },
 ];
