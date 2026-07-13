@@ -51,11 +51,50 @@ export default function StructuredData() {
         "areaServed": { "@type": "Country", "name": "France" }
     };
 
+    
+    const webPageSchema = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "url": "https://www.expertdouchesenior.com",
+        "name": "Expert Douche Senior",
+        "description": "Installation de douches sécurisées pour seniors et PMR",
+        "inLanguage": "fr",
+        "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [
+                "h1",
+                ".hero-description",
+                ".faq-answer",
+                "article h2",
+                "article p:first-of-type",
+                ".prose > p:first-child"
+            ]
+        },
+        "isPartOf": {
+            "@type": "WebSite",
+            "url": "https://www.expertdouchesenior.com",
+            "name": "Expert Douche Senior"
+        }
+    };
+
     return (
+        <>
         <Script
             id="org-schema"
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) + '\n' + JSON.stringify(websiteSchema) + '\n' + JSON.stringify(serviceSchema) }}
         />
+
+        <Script
+
+            id="webpage-speakable-schema"
+
+            type="application/ld+json"
+
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+
+        />
+
+        </>
     );
 }
