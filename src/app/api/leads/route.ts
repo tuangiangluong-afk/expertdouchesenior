@@ -22,6 +22,12 @@ function calculateScore(body: any): number {
 export async function POST(request: Request) {
     try {
         const body = await request.json();
+        const clientIp = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || request.headers.get("x-real-ip") || "127.0.0.1";
+        const refererUrl = request.headers.get("referer") || "";
+        const consentText = body.consentText || "J'accepte d'être contacté(e) par téléphone par ViteUnDevis.com et ses partenaires certifiés pour la qualification de ma demande de devis et la réalisation d'une étude technique.";
+        const consentDate = body.consentDate || new Date().toISOString();
+        const consentIp = clientIp;
+        const consentUrl = body.consentUrl || refererUrl || "https://" + (body.domain || "expertdouchesenior.com");
         console.log("📥 [API/LEADS/PMR] Received body:", body);
         const {
             name, email, phone, city, postalCode, domain,
@@ -81,7 +87,11 @@ export async function POST(request: Request) {
                 delais: timeline === 'immediat' ? 1 : 2, // 1: Urgent/Immédiat, 2: Dans les 6 mois
                 description: `Projet de remplacement de baignoire par une douche senior / PMR. Age du beneficiaire: ${beneficiaryAge || 'N/A'}. Statut propriétaire: ${ownerStatus || 'N/A'}. Delai: ${timeline || 'N/A'}. Score: ${leadScore}.${stairliftInterest ? ' INTERET SUPPLEMENTAIRE POUR UN MONTE-ESCALIER.' : ''}`,
                 cat_id: catId,
-                site_name: domain || 'expertdouchesenior.com'
+                site_name: domain || 'expertdouchesenior.com',
+                consent_text: consentText,
+                consent_date: consentDate,
+                consent_ip: consentIp,
+                consent_url: consentUrl
             };
 
             try {
