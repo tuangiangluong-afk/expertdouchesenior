@@ -134,7 +134,7 @@ export default function LeadForm({
                     formData.email.includes("@") &&
                     ZIP_CODE_REGEX.test(formData.zipCode.trim()) &&
                     formData.phone.trim() !== "" &&
-                    FRENCH_PHONE_REGEX.test(formData.phone.replace(/\s/g, '') && formData.phoneConsent === true)
+                    FRENCH_PHONE_REGEX.test(formData.phone.replace(/\s/g, '')) && formData.phoneConsent === true
                 );
             default: return false;
         }
@@ -160,7 +160,7 @@ export default function LeadForm({
             if (formData.name.trim() === "") errors.push("votre Nom");
             if (!ZIP_CODE_REGEX.test(formData.zipCode.trim())) errors.push("un Code Postal valide");
             if (!formData.email.includes("@")) errors.push("un Email valide");
-            if (formData.phone.trim() === "" || !FRENCH_PHONE_REGEX.test(formData.phone.replace(/\s/g, '') && formData.phoneConsent === true)) errors.push("un Numéro de téléphone valide");
+            if (formData.phone.trim() === "" || !FRENCH_PHONE_REGEX.test(formData.phone.replace(/\s/g, '')) && formData.phoneConsent === true) errors.push("un Numéro de téléphone valide");
             
             setErrorMessage(`Veuillez renseigner : ${errors.join(', ')}.`);
             return;
@@ -525,7 +525,7 @@ export default function LeadForm({
                                     placeholder="06 12 34 56 78"
                                     className="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 transition outline-none"
                                 />
-                                {formData.phone && !FRENCH_PHONE_REGEX.test(formData.phone.replace(/\s/g, '') && formData.phoneConsent === true) && (
+                                {formData.phone && !FRENCH_PHONE_REGEX.test(formData.phone.replace(/\s/g, '')) && (
                                     <p className="text-xs text-red-500 mt-1">
                                         Format invalide. Ex: 06 12 34 56 78
                                     </p>
