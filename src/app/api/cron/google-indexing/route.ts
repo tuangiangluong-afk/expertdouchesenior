@@ -39,7 +39,7 @@ export async function GET(request: Request) {
     let urls: string[] = [];
     if (sitemapResponse.ok) {
       const xml = await sitemapResponse.text();
-      const matches = [...xml.matchAll(/<loc>(.*?)</loc>/g)];
+      const matches = [...xml.matchAll(/<loc>(.*?)<\/loc>/g)];
       urls = matches.map(m => m[1]);
     }
 
